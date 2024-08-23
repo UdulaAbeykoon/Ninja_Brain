@@ -1,0 +1,122 @@
+
+.flip-card {
+  width: 700px; /* Updated width */
+  height: 400px; /* Updated height */
+  perspective: 1500px;
+  cursor: pointer;
+  position: relative;
+  color: black;
+  z-index: 1; /* Ensure cards appear above stars */
+  background-image: url('https://www.transparenttextures.com/patterns/brushed-aluminum.png'); /* Add a subtle texture */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  font-size: 10px;
+  color: black; /* Black font color */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  line-height: 1.5;
+  align-items: center;
+  border-radius: 10px;
+
+  font-family: 'Arial', sans-serif; /* Add your desired font-family here */
+}
+
+.flip-card-front {
+  background: linear-gradient(to bottom, #181b1c, #485761);
+}
+
+.flip-card-back {
+  background: linear-gradient(to bottom, #181b1c, #485761);
+  transform: rotateY(180deg);
+}
+
+/* Carousel Styles */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px; /* Adjusted to fit larger cards */
+  margin: 0 auto;
+  position: relative;
+  height: 500px; /* Adjusted to fit larger cards */
+  z-index: 1; /* Ensure carousel appears above stars */
+}
+
+.carousel-wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 700px; /* Match the width of the flip card */
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  display: none;
+}
+
+.carousel-slide.active {
+  display: flex; /* Show only the active slide */
+  justify-content: center;
+}
+
+/* Arrows */
+.carousel-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  position: fixed; /* Fixed positioning for edges of the screen */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000; /* Ensure the buttons are on top of other content */
+}
+
+.carousel-button.prev {
+  left: 20px; /* Position the left button at the left edge of the screen */
+}
+
+.carousel-button.next {
+  right: 20px; /* Position the right button at the right edge of the screen */
+}
+
+.carousel-button:hover {
+  background-color: #555;
+}
+
+/* Container Styles */
+.output-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #181b1c;
+  position: relative;
+  padding: 40px 0; /* Padding to avoid touching top and bottom */
+}
+
+body {
+  margin: 0;
+  background-color: #333; /* Ensure the black background */
+}

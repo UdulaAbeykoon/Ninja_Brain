@@ -1,0 +1,163 @@
+/* Full Height and Background for Body */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #3A6275; /* Fallback background color */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Star Animation Styles */
+#stars, #stars2, #stars3 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 0px 0px 2px 1px #FFF, 
+                800px 200px 2px 1px #FFF, 
+                1600px 400px 2px 1px #FFF, 
+                1200px 500px 2px 1px #FFF, 
+                400px 600px 2px 1px #FFF, 
+                1000px 800px 2px 1px #FFF;
+    animation: animStar 50s linear infinite;
+}
+
+#stars2 {
+    box-shadow: 0px 0px 3px 2px #FFF, 
+                700px 100px 3px 2px #FFF, 
+                1400px 300px 3px 2px #FFF, 
+                900px 400px 3px 2px #FFF, 
+                600px 700px 3px 2px #FFF, 
+                800px 900px 3px 2px #FFF;
+    animation: animStar 100s linear infinite;
+}
+
+#stars3 {
+    box-shadow: 0px 0px 4px 3px #FFF, 
+                600px 0px 4px 3px #FFF, 
+                1200px 200px 4px 3px #FFF, 
+                1100px 300px 4px 3px #FFF, 
+                500px 500px 4px 3px #FFF, 
+                900px 600px 4px 3px #FFF;
+    animation: animStar 150s linear infinite;
+}
+
+@keyframes animStar {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-2000px); }
+}
+
+/* Container Styles */
+.container {
+    position: relative; /* Ensure container is above stars */
+    background: rgba(0, 65, 84, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    width: 350px;
+    text-align: center;
+    margin: 100px auto;
+    color: #ECF0F5;
+    transition: all 0.5s ease;
+}
+
+/* Title Styles */
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ECF0F5;
+    margin-bottom: 30px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    background-color: #004154;
+    border: none;
+    border-bottom: 2px solid #3A6275;
+    border-radius: 0;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: #ECF0F5;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #3A6275;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Button Styles */
+button {
+    padding: 12px;
+    border: 2px solid #3A6275;
+    border-radius: 0;
+    background-color: transparent;
+    color: #3A6275;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #3A6275;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+p {
+    margin-top: 20px;
+    color: #A2A4A4;
+}
+
+p button {
+    background: none;
+    border: none;
+    color: #3A6275;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 16px;
+    padding: 0;
+}
+
+p button:hover {
+    color: #ffffff;
+}
+
+/* Alert Styles */
+.alert {
+    margin-top: 20px;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Transition between Login and Signup */
+.container.login form,
+.container.signup form {
+    animation: slide 0.5s ease;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
